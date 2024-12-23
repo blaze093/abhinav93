@@ -1,0 +1,469 @@
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(270deg, #6a11cb, #2575fc);
+    background-size: 400% 400%; /* Ensures smooth transition across a large gradient */
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: gradient-animation 10s ease infinite; /* Applies animation */
+}
+
+/* Keyframes for animated gradient background */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Scroll Animation for Hero Section */
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Neon Effect at the Bottom */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(270deg, #6a11cb, #2575fc);
+    background-size: 400% 400%; /* Matches the gradient of the hero section */
+    animation: gradient-animation 10s ease infinite;
+    filter: blur(10px); /* Adds a glowing effect */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8); /* Adds a neon glow effect */
+}
+
+/* Top Container (Navigation) */
+.top-container {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, green, white);
+    background-size: 300%;
+    animation: multiColorShine 3s infinite linear;
+}
+
+       /* 3D Effect */
+        h1, p, .brand {
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgba(255, 255, 255, 0.5);
+            transform: rotateX(10deg) rotateY(10deg); /* Apply 3D transformation */
+            animation: floating 3s ease-in-out infinite alternate;
+            transition: transform 0.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero h1 span {
+            background-image: linear-gradient(90deg, red, yellow, green, gold, black);
+            background-size: 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: #ff0000;
+            animation: multiColorShine 4s infinite linear;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin: 10px 0 0;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+            background-image: linear-gradient(90deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb, #ff9a9e);
+            background-size: 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: multiColorShine 3s infinite linear;
+        }
+
+        .brand {
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            background-image: linear-gradient(90deg, red, yellow, pink, green, white);
+            background-size: 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: multiColorShine 3s infinite linear;
+        }
+
+        @keyframes multiColorShine {
+            0% {
+                background-position: 0%;
+            }
+            100% {
+                background-position: 100%;
+            }
+        }
+
+
+/* Menu Button */
+.menu-button {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-button div {
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-button.open div:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-button.open div:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-button.open div:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Desktop Menu */
+.menu {
+    display: flex;
+    gap: 30px;
+    font-size: 1.2rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ffcc00;
+}
+
+/* Mobile Menu */
+.menu-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 0px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3px;
+    border-radius: 8px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999; 
+}
+
+.menu-mobile a {
+    text-decoration: none;
+    color: #2575fc;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.menu-mobile a:hover {
+    background: #2575fc;
+    color: white;
+}
+
+/* Image Container */
+.image-container {
+    margin-top: 10px;
+    text-align: center;
+    animation: fadeInSlideUp 1s ease-out; /* Adding scroll animation */
+}
+
+.transparent-image {
+    width: 100%; /* Make the image take full width */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 1000px; /* Set a maximum width for larger screens */
+    object-fit: cover; /* Ensure the image covers the container */
+    max-height: 70vh; /* Limit the height to fit within the viewport */
+    display: block; /* Center the image */
+    margin: 0 auto; /* Horizontally center the image */
+}
+
+/* For larger screens (desktops) */
+@media (min-width: 768px) {
+    .transparent-image {
+        max-height: 70vh; /* Allow the image to fit better on desktops */
+    }
+}
+
+/* For smaller screens (mobile devices) */
+@media (max-width: 768px) {
+    .transparent-image {
+        max-height: 50vh; /* Adjust height for better fit on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .menu-button {
+        display: flex;
+    }
+
+    .menu-mobile.active {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .hero {
+        padding: 40px;
+        text-align: left;
+    }
+
+    .top-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .menu {
+        display: flex;
+    }
+}
+
+/* 3D Footer Styling */
+.footer {
+    background: linear-gradient(145deg, #2c3e50, #34495e);
+    box-shadow: 5px 5px 15px #1c2833, -5px -5px 15px #455a64;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 30px;
+    border-radius: 10px 10px 0 0;
+    transform: perspective(600px) rotateX(5deg);
+    animation: fadeInSlideUp 1s ease-out; /* Adding scroll animation */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Tools Section */
+.tools-section {
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column; /* Stack image and content vertically */
+    align-items: center;
+    height: auto;
+    background: none;
+    overflow: hidden;
+    perspective: 1200px; /* Add perspective for 3D effect */
+    animation: fadeInSlideUp 1.5s ease-out; /* Adding scroll animation */
+}
+
+/* Tools Image */
+.tools-image {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tools-image img {
+    width: 300px; /* Default image size */
+    height: auto;
+    display: block;
+    background: none; /* Transparent background */
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    transform: rotateY(0deg) rotateX(0deg); /* Initial rotation */
+}
+
+.tools-image img:hover {
+    transform: rotateY(15deg) rotateX(10deg); /* 3D effect on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Enhance shadow */
+}
+
+/* Explore Button */
+.explore-button {
+    background: linear-gradient(145deg, #ff0000, #000000); /* Gradient button */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, background 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+.explore-button:hover {
+    transform: translateY(-5px) scale(1.05); /* Lift and zoom on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    color: #333; /* Change text color on hover */
+    background: linear-gradient(145deg, #ff6700, #ff4c00); /* Change background on hover */
+}
+
+/* Tools Content */
+.tools-content {
+    max-width: 800px; /* Adjust for wider screens */
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #333; /* Use dark color for readability */
+    animation: fadeInSlideUp 1.5s ease-out; /* Adding scroll animation */
+}
+
+/* Desktop and Mobile: Uniform Gradient Style */
+.tools-content h2 {
+    font-size: 3rem; /* Default size for desktop */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(90deg, #ff0000, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Roboto', sans-serif; /* Modern font for title */
+    transition: transform 0.5s ease, color 0.3s ease;
+}
+
+.tools-content h2:hover {
+    transform: scale(1.05); /* Slightly scale up the text on hover */
+    color: rgb(255, 105, 180); /* Apply hot pink text color on hover */
+}
+
+.tools-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.tools-content p:hover {
+    color: #7F8C8D; /* Slightly darker shade for hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .tools-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .tools-content p {
+        font-size: 1.2rem;
+    }
+
+    .tools-image img {
+        width: 250px; /* Adjust image size */
+    }
+
+    .explore-button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tools-content h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .tools-content p {
+        font-size: 1.3rem;
+    }
+
+    .tools-image img {
+        width: 200px; /* Smaller image for mobile */
+    }
+
+    .explore-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tools-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .tools-content p {
+        font-size: 1rem;
+    }
+
+    .explore-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .tools-image img {
+        width: 150px; /* Adjust image size for very small screens */
+    }
+}
