@@ -206,14 +206,15 @@ body {
 .menu-mobile {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    gap: 0px;
     background: rgba(255, 255, 255, 0.9);
-    padding: 8px;
+    padding: 3px;
     border-radius: 8px;
     position: absolute;
-    top: 70px;
+    top: 60px;
     right: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999; 
 }
 
 .menu-mobile a {
