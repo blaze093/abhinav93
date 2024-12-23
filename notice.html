@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice Board - Blaze</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0F2027, #203A43, #2C5364);
+            color: #FFF;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            background: linear-gradient(145deg, #1E293B, #374151);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), inset 0 3px 5px rgba(255, 255, 255, 0.1);
+        }
+        h1, h2 {
+            color: #FFD700;
+            text-shadow: 0 5px 15px rgba(255, 215, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            font-size: 2.5rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #DDD;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .header-image {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header-image img {
+            max-width: 100%;
+            height: auto;
+            opacity: 0.7;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+        }
+        .notice-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .notice-post {
+            background-color: #1E293B;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            position: relative;
+        }
+        .notice-post.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .notice-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+        }
+        .notice-post h3 {
+            margin-top: 15px;
+            font-size: 1.6em;
+            color: #FFD700;
+            text-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+        }
+        .notice-post p {
+            margin-bottom: 15px;
+            color: #DDD;
+        }
+        .notice-post time {
+            font-style: italic;
+            color: #888;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            color: #FFF;
+            background: linear-gradient(to right, #FFD700, #FF5733);
+            padding: 15px 30px;
+            border-radius: 40px;
+            box-shadow: 0 10px 20px rgba(255, 87, 51, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 20px 40px rgba(255, 87, 51, 0.7);
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #AAA;
+            text-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 20px;
+            }
+            .notice-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Image -->
+        <div class="header-image">
+            <img src="notice.png" alt="Header Image">
+        </div>
+
+        <!-- Title -->
+        <h1>Notice Board</h1>
+
+        <!-- Notice Posts -->
+        <div class="notice-container">
+            <!-- Hacking Related Notices -->
+            <div class="notice-post">
+                <h3>Ethical Hacking: Social Engineering</h3>
+                <p>Social engineering involves manipulating people into divulging confidential information. It is one of the most common methods used in hacking.</p>
+                <time datetime="2024-12-23">Posted on: December 23, 2024</time>
+            </div>
+
+            <div class="notice-post">
+                <h3>Ethical Hacking: Phishing</h3>
+                <p>Phishing is a technique where attackers impersonate legitimate institutions to steal sensitive information like passwords and credit card numbers.</p>
+                <time datetime="2024-12-23">Posted on: December 23, 2024</time>
+            </div>
+
+            <div class="notice-post">
+                <h3>Ethical Hacking: SQL Injection</h3>
+                <p>SQL Injection is a type of attack that allows hackers to exploit vulnerabilities in a web application's database query execution.</p>
+                <time datetime="2024-12-23">Posted on: December 23, 2024</time>
+            </div>
+
+            <div class="notice-post">
+                <h3>Ethical Hacking: Password Cracking</h3>
+                <p>Password cracking tools are used by ethical hackers to test the strength of passwords and identify vulnerabilities in systems.</p>
+                <time datetime="2024-12-23">Posted on: December 23, 2024</time>
+            </div>
+
+            <div class="notice-post">
+                <h3>Ethical Hacking: Malware Analysis</h3>
+                <p>Malware analysis is the process of understanding the behavior of malicious software in order to develop defenses and tools for mitigating its impact.</p>
+                <time datetime="2024-12-23">Posted on: December 23, 2024</time>
+            </div>
+
+            <div class="notice-post">
+                <h3>Ethical Hacking: Network Sniffing</h3>
+                <p>Network sniffing involves capturing and analyzing network traffic to detect potential vulnerabilities or unauthorized access attempts.</p>
+                <time datetime="2024-12-23">Posted on: December 23, 2024</time>
+            </div>
+
+            <div class="notice-post">
+                <h3>Ethical Hacking: DDoS Attacks</h3>
+                <p>Distributed Denial-of-Service (DDoS) attacks aim to overwhelm a server or network with traffic, causing it to crash. Ethical hackers learn to prevent such attacks.</p>
+                <time datetime="2024-12-23">Posted on: December 23, 2024</time>
+            </div>
+
+            <div class="notice-post">
+                <h3>Ethical Hacking: Vulnerability Scanning</h3>
+                <p>Vulnerability scanning is a technique used by hackers to find weaknesses in software or hardware systems, allowing them to exploit those vulnerabilities.</p>
+                <time datetime="2024-12-23">Posted on: December 23, 2024</time>
+            </div>
+
+            <div class="notice-post">
+                <h3>Ethical Hacking: Wireless Hacking</h3>
+                <p>Wireless hacking involves exploiting vulnerabilities in wireless networks, such as weak encryption or poor access control, to gain unauthorized access.</p>
+                <time datetime="2024-12-23">Posted on: December 23, 2024</time>
+            </div>
+
+            <div class="notice-post">
+                <h3>Ethical Hacking: Penetration Testing</h3>
+                <p>Penetration testing involves simulating a real-world attack on a system to identify vulnerabilities before malicious hackers can exploit them.</p>
+                <time datetime="2024-12-23">Posted on: December 23, 2024</time>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta">
+            <a href="contact.html">Get in Touch</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Abhinav. All rights reserved.
+    </footer>
+
+    <script>
+        // JavaScript to add the 'show' class when a notice post is in view
+        const noticePosts = document.querySelectorAll('.notice-post');
+
+        function checkVisibility() {
+            const windowHeight = window.innerHeight;
+            noticePosts.forEach(post => {
+                const rect = post.getBoundingClientRect();
+                if (rect.top <= windowHeight * 0.8 && rect.bottom >= 0) {
+                    post.classList.add('show');
+                }
+            });
+        }
+
+        // Call checkVisibility when the page loads and when scrolling
+        window.addEventListener('load', checkVisibility);
+        window.addEventListener('scroll', checkVisibility);
+    </script>
+</body>
+</html>

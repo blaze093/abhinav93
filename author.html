@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author - Blaze</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0F2027, #203A43, #2C5364);
+            color: #FFF;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            background: linear-gradient(145deg, #1E293B, #374151);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), inset 0 3px 5px rgba(255, 255, 255, 0.1);
+        }
+        h1, h2 {
+            color: #FFD700;
+            text-shadow: 0 5px 15px rgba(255, 215, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            font-size: 2.5rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #DDD;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .header-image {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header-image img {
+            max-width: 100%;
+            height: auto;
+            opacity: 0.7;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+        }
+        .author-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .author-image {
+            flex: 1;
+            padding-right: 30px;
+        }
+        .author-image img {
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+        }
+        .author-details {
+            flex: 2;
+            color: #fff;
+        }
+        .author-details h2 {
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        .author-details p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .author-social-links {
+            list-style-type: none;
+            padding: 0;
+        }
+        .author-social-links li {
+            display: inline;
+            margin-right: 15px;
+        }
+        .author-social-links a {
+            color: #FFD700;
+            font-size: 1.3rem;
+            text-decoration: none;
+        }
+        .author-social-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Articles Section */
+        .articles-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #1E293B;
+            border-radius: 15px;
+        }
+        .articles-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 30px;
+        }
+        .articles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .article-card {
+            background-color: #374151;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .article-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .article-card h3 {
+            font-size: 1.6rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        .article-card p {
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+        .article-card a {
+            text-decoration: none;
+            color: #FFD700;
+        }
+        .article-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #AAA;
+            text-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 20px;
+            }
+            .author-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .author-image {
+                margin-bottom: 20px;
+            }
+            .articles-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Image -->
+        <div class="header-image">
+            <img src="author.png" alt="Author Header Image">
+        </div>
+
+        <!-- Author Information -->
+        <div class="author-container">
+            <div class="author-image">
+                <img src="author 1.png" alt="Author Image">
+            </div>
+            <div class="author-details">
+                <h2>Abhinav - Ethical Hacker & Developer</h2>
+                <p>I'm Abhinav, a passionate ethical hacker and cybersecurity enthusiast. I create tools and write blogs related to hacking, cybersecurity, and ethical hacking. Follow me for more!</p>
+                <ul class="author-social-links">
+                    <li><a href="https://Teitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.instagram.com/im_not_raaz?igsh=eWszZTV2bmVhOHlr" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Articles Section -->
+        <div class="articles-section">
+            <h2>Articles by Abhinav</h2>
+            <div class="articles-container">
+                <div class="article-card">
+                    <h3><a href="article1.html">Introduction to Ethical Hacking: A Beginner's Guide</a></h3>
+                    <p>Explore the world of ethical hacking, its importance, and the steps to becoming a successful ethical hacker.</p>
+                </div>
+                <div class="article-card">
+                    <h3><a href="article2.html">Mastering SQL Injection: Protect Your Database</a></h3>
+                    <p>SQL injection attacks are a common threat. Learn how these attacks work and how to safeguard your database.</p>
+                </div>
+                <div class="article-card">
+                    <h3><a href="article3.html">Social Engineering: Understanding the Psychology Behind Hacks</a></h3>
+                    <p>Social engineering is a psychological manipulation technique used in hacking. This article will break down its key strategies.</p>
+                </div>
+                <div class="article-card">
+                    <h3><a href="article4.html">Phishing Attacks: How to Spot and Prevent Them</a></h3>
+                    <p>Phishing is a widespread cyber attack method. Learn how to detect and protect yourself from phishing attempts.</p>
+                </div>
+                <div class="article-card">
+                    <h3><a href="article5.html">How Ethical Hackers Use Password Cracking Tools</a></h3>
+                    <p>Password cracking is a vital part of cybersecurity. This article explains how ethical hackers use password cracking tools responsibly.</p>
+                </div>
+                <div class="article-card">
+                    <h3><a href="article6.html">Malware Analysis: A Deep Dive into Malicious Software</a></h3>
+                    <p>Understand how ethical hackers reverse-engineer malware and protect against various types of malicious software.</p>
+                </div>
+                <div class="article-card">
+                    <h3><a href="article7.html">How DDoS Attacks Work and Ways to Prevent Them</a></h3>
+                    <p>DDoS attacks can overwhelm servers and disrupt services. Learn how they function and the steps to mitigate such threats.</p>
+                </div>
+                <div class="article-card">
+                    <h3><a href="article8.html">Vulnerability Scanning Tools: An Essential Guide</a></h3>
+                    <p>Vulnerability scanning is crucial for discovering security flaws. Discover the best tools for ethical hackers to use.</p>
+                </div>
+                <div class="article-card">
+                    <h3><a href="article9.html">The Power of Wireless Network Hacking: How Ethical Hackers Test Security</a></h3>
+                    <p>Learn about wireless network vulnerabilities and how ethical hackers test and secure them against unauthorized access.</p>
+                </div>
+                <div class="article-card">
+                    <h3><a href="article10.html">Penetration Testing 101: A Beginner's Guide to Finding Vulnerabilities</a></h3>
+                    <p>Penetration testing is vital for identifying security flaws. This article introduces penetration testing and its importance in cybersecurity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Abhinav - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Scroll Animation for Articles
+        window.addEventListener('scroll', function() {
+            const articles = document.querySelectorAll('.article-card');
+            const windowHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+
+            articles.forEach(article => {
+                const articleTop = article.getBoundingClientRect().top + scrollY;
+                if (scrollY + windowHeight > articleTop + 150) {
+                    article.classList.add('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

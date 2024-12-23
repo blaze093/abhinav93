@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Tools Section</title>
+  <style>
+    /* General Section Styling */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #1e293b, #111827);
+      color: #f3f4f6;
+      overflow-x: hidden;
+    }
+
+    .tools-section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .section-title {
+      font-size: 4.5rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      background: linear-gradient(90deg, #fbbf24, #ff0000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-tagline {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      color: #d1d5db;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Search Bar */
+    .search-bar {
+      width: 80%;
+      max-width: 600px;
+      padding: 15px;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(120deg, #3b82f6, #2563eb);
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      outline: none;
+    }
+
+    .search-bar::placeholder {
+      color: #fff;
+    }
+
+    /* Tools Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .tool-card {
+      background: linear-gradient(145deg, #2d3748, #1e293b);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .tool-card .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+.tool-card .tool-icon {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  background-color: transparent; /* Transparent background */
+  transition: transform 0.3s ease-in-out;
+}
+
+    .tool-card:hover .tool-icon {
+      transform: scale(1.1);
+    }
+
+    .tool-name {
+      font-size: 1.8rem;
+      margin: 15px 0;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    }
+
+    .tool-description {
+      font-size: 1rem;
+      color: #d1d5db;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .tool-rating {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #fbbf24;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .btn {
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .try-now-btn {
+      background: linear-gradient(90deg, #3b82f6, #2563eb);
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .try-now-btn:hover {
+      background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    }
+
+    /* Tool Details Section Styling */
+    .tool-details {
+      background: linear-gradient(145deg, #374151, #1f2937);
+      color: #d1d5db;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      display: none;
+    }
+
+    .tool-details h3 {
+      font-size: 1.8rem;
+      color: #fbbf24;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .tool-details p {
+      font-size: 1rem;
+      margin: 10px 0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .section-tagline {
+        font-size: 1.2rem;
+      }
+
+.tool-card .tool-icon {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for 3D effect */
+  transform-style: preserve-3d; /* Preserve 3D space */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2); /* Shadow for 3D look */
+  background-color: transparent; /* Transparent background */
+  border-radius: 15px; /* Border radius to round corners */
+  overflow: hidden; /* Hide any overflow content */
+}
+
+.tool-card .tool-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the whole space */
+}
+
+.tool-card .tool-icon:hover {
+  transform: rotateY(20deg) rotateX(20deg) scale(1.1); /* 3D rotation and scaling on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 30px 60px rgba(0, 0, 0, 0.4); /* Intense shadow for hover effect */
+}
+
+.tool-name {
+  font-size: 1.5rem;
+  color: #fff; /* Premium gold color */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 215, 0, 0.7); /* Shadow and shine effect */
+  font-weight: bold; 
+}
+
+      .tool-description {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="tools-section">
+    <h1 class="section-title">Explore Our Tools</h1>
+    <p class="section-tagline">Find tools that empower your work and enhance productivity.</p>
+    <input type="text" class="search-bar" placeholder="Search tools by name..." />
+
+<div class="tools-grid">
+  <div class="tool-card" id="tool1">
+    <div class="card-content">
+      <img src="Nmap.png" alt="Tool Icon" class="tool-icon" />
+      <h3 class="tool-name">Nmap</h3>
+      <p class="tool-description">Network exploration tool for scanning and auditing networks.</p>
+      <div class="tool-rating">⭐⭐⭐⭐⭐</div>
+      <button class="btn try-now-btn" onclick="toggleToolDetails('tool1')">Try Now</button>
+    </div>
+    <div class="tool-details" id="tool1-details">
+      <h3>Nmap Details</h3>
+      <p><strong>Download:</strong> 
+        <a href="https://nmap.org/download.html" target="_blank">Download Nmap</a>
+      </p>
+      <p><strong>Uses:</strong> Network discovery and security auditing.</p>
+    </div>
+  </div>
+
+  <div class="tool-card" id="tool2">
+    <div class="card-content">
+      <img src="sql.png" alt="Tool Icon" class="tool-icon" />
+      <h3 class="tool-name">SQLMap</h3>
+      <p class="tool-description">Automated SQL injection and database takeover tool.</p>
+      <div class="tool-rating">⭐⭐⭐⭐⭐</div>
+      <button class="btn try-now-btn" onclick="toggleToolDetails('tool2')">Try Now</button>
+    </div>
+    <div class="tool-details" id="tool2-details">
+      <h3>SQLMap Details</h3>
+      <p><strong>Download:</strong> 
+        <a href="http://sqlmap.org/" target="_blank">Download SQLMap</a>
+      </p>
+      <p><strong>Uses:</strong> Detects and exploits SQL injection flaws.</p>
+    </div>
+  </div>
+
+  <div class="tool-card" id="tool3">
+    <div class="card-content">
+      <img src="Hydra.png" alt="Tool Icon" class="tool-icon" />
+      <h3 class="tool-name">Hydra</h3>
+      <p class="tool-description">Brute force password cracking tool for various protocols.</p>
+      <div class="tool-rating">⭐⭐⭐⭐⭐</div>
+      <button class="btn try-now-btn" onclick="toggleToolDetails('tool3')">Try Now</button>
+    </div>
+    <div class="tool-details" id="tool3-details">
+      <h3>Hydra Details</h3>
+      <p><strong>Download:</strong> 
+        <a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank">Download Hydra</a>
+      </p>
+      <p><strong>Uses:</strong> Brute force passwords for remote login services.</p>
+    </div>
+  </div>
+
+  <div class="tool-card" id="tool4">
+    <div class="card-content">
+      <img src="burp.png" alt="Tool Icon" class="tool-icon" />
+      <h3 class="tool-name">Burp Suite</h3>
+      <p class="tool-description">Integrated platform for web application security testing.</p>
+      <div class="tool-rating">⭐⭐⭐⭐⭐</div>
+      <button class="btn try-now-btn" onclick="toggleToolDetails('tool4')">Try Now</button>
+    </div>
+    <div class="tool-details" id="tool4-details">
+      <h3>Burp Suite Details</h3>
+      <p><strong>Download:</strong> 
+        <a href="https://portswigger.net/burp" target="_blank">Download Burp Suite</a>
+      </p>
+      <p><strong>Uses:</strong> Penetration testing and vulnerability scanning for web applications.</p>
+    </div>
+  </div>
+
+  <div class="tool-card" id="tool5">
+    <div class="card-content">
+      <img src="metasploit.png" alt="Tool Icon" class="tool-icon" />
+      <h3 class="tool-name">Metasploit</h3>
+      <p class="tool-description">Penetration testing framework for exploiting vulnerabilities.</p>
+      <div class="tool-rating">⭐⭐⭐⭐⭐</div>
+      <button class="btn try-now-btn" onclick="toggleToolDetails('tool5')">Try Now</button>
+    </div>
+    <div class="tool-details" id="tool5-details">
+      <h3>Metasploit Details</h3>
+      <p><strong>Download:</strong> 
+        <a href="https://www.metasploit.com/" target="_blank">Download Metasploit</a>
+      </p>
+      <p><strong>Uses:</strong> Exploit development and penetration testing framework.</p>
+    </div>
+  </div>
+
+  <div class="tool-card" id="tool6">
+    <div class="card-content">
+      <img src="aircrack.png" alt="Tool Icon" class="tool-icon" />
+      <h3 class="tool-name">Aircrack-ng</h3>
+      <p class="tool-description">Wireless network security tool for monitoring and cracking WEP and WPA-PSK keys.</p>
+      <div class="tool-rating">⭐⭐⭐⭐</div>
+      <button class="btn try-now-btn" onclick="toggleToolDetails('tool6')">Try Now</button>
+    </div>
+    <div class="tool-details" id="tool6-details">
+      <h3>Aircrack-ng Details</h3>
+      <p><strong>Download:</strong> 
+        <a href="https://www.aircrack-ng.org/" target="_blank">Download Aircrack-ng</a>
+      </p>
+      <p><strong>Uses:</strong> Cracks WEP and WPA-PSK keys for wireless networks.</p>
+    </div>
+  </div>
+
+  <div class="tool-card" id="tool7">
+    <div class="card-content">
+      <img src="wireshark.png" alt="Tool Icon" class="tool-icon" />
+      <h3 class="tool-name">Wireshark</h3>
+      <p class="tool-description">Network protocol analyzer for deep packet inspection.</p>
+      <div class="tool-rating">⭐⭐⭐⭐⭐</div>
+      <button class="btn try-now-btn" onclick="toggleToolDetails('tool7')">Try Now</button>
+    </div>
+    <div class="tool-details" id="tool7-details">
+      <h3>Wireshark Details</h3>
+      <p><strong>Download:</strong> 
+        <a href="https://www.wireshark.org/download.html" target="_blank">Download Wireshark</a>
+      </p>
+      <p><strong>Uses:</strong> Capture and analyze network packets in real time.</p>
+    </div>
+  </div>
+
+  <div class="tool-card" id="tool8">
+    <div class="card-content">
+      <img src="netcat.png" alt="Tool Icon" class="tool-icon" />
+      <h3 class="tool-name">Netcat</h3>
+      <p class="tool-description">Network utility for reading and writing data across network connections.</p>
+      <div class="tool-rating">⭐⭐⭐⭐</div>
+      <button class="btn try-now-btn" onclick="toggleToolDetails('tool8')">Try Now</button>
+    </div>
+    <div class="tool-details" id="tool8-details">
+      <h3>Netcat Details</h3>
+      <p><strong>Download:</strong> 
+        <a href="https://nmap.org/ncat/" target="_blank">Download Netcat</a>
+      </p>
+      <p><strong>Uses:</strong> Network diagnostics, backdoor creation, and port scanning.</p>
+    </div>
+  </div>
+
+  <div class="tool-card" id="tool9">
+    <div class="card-content">
+      <img src="nikto.png" alt="Tool Icon" class="tool-icon" />
+      <h3 class="tool-name">Nikto</h3>
+      <p class="tool-description">Web server scanner for vulnerabilities.</p>
+      <div class="tool-rating">⭐⭐⭐⭐</div>
+      <button class="btn try-now-btn" onclick="toggleToolDetails('tool9')">Try Now</button>
+    </div>
+    <div class="tool-details" id="tool9-details">
+      <h3>Nikto Details</h3>
+      <p><strong>Download:</strong> 
+        <a href="https://github.com/sullo/nikto" target="_blank">Download Nikto</a>
+      </p>
+      <p><strong>Uses:</strong> Scan web servers for security vulnerabilities.</p>
+    </div>
+  </div>
+
+  <div class="tool-card" id="tool10">
+    <div class="card-content">
+      <img src="owasp.png" alt="Tool Icon" class="tool-icon" />
+      <h3 class="tool-name">OWASP ZAP</h3>
+      <p class="tool-description">Open-source web application security scanner.</p>
+      <div class="tool-rating">⭐⭐⭐⭐⭐</div>
+      <button class="btn try-now-btn" onclick="toggleToolDetails('tool10')">Try Now</button>
+    </div>
+    <div class="tool-details" id="tool10-details">
+      <h3>OWASP ZAP Details</h3>
+      <p><strong>Download:</strong> 
+        <a href="https://www.zaproxy.org/download/" target="_blank">Download OWASP ZAP</a>
+      </p>
+      <p><strong>Uses:</strong> Find security vulnerabilities in web applications.</p>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </section>
+<footer>
+    <div class="footer">
+      <p>© 2024 All Rights Reserved. | Designed by Abhinav Singh</p>
+    </div>
+  </footer>
+
+  <style>
+    /* Footer Styling */
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      background: linear-gradient(135deg, #2b2b2b, #111111);
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 1.2rem;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .footer {
+      transform: rotateX(5deg) perspective(1000px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Responsive Footer */
+    @media screen and (max-width: 768px) {
+      .footer p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</body>
+</html>
+
+  <script>
+    function toggleToolDetails(toolId) {
+      const detailDiv = document.getElementById(`${toolId}-details`);
+      const allDetails = document.querySelectorAll('.tool-details');
+      allDetails.forEach(detail => {
+        if (detail !== detailDiv) detail.style.display = 'none';
+      });
+      detailDiv.style.display = detailDiv.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
